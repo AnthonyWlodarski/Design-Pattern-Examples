@@ -62,3 +62,15 @@ class Registry {
         }
     }
 }
+
+Registry::add('Anthony', 'First');
+Registry::add('Wlodarski', 'Last');
+Registry::add(array(), 'EmptyArray');
+
+echo 'First name: ' . Registry::get('First') . PHP_EOL;
+echo 'Last name: ' . Registry::get('Last') . PHP_EOL;
+echo 'Does the registry have a middle name?' . ((Registry::contains('middle'))?'Yes':'No') . PHP_EOL;
+
+Registry::remove('EmptyArray');
+echo 'Does the registry have a empty array?' . ((Registry::contains('EmptyArray'))?'Yes':'No') . PHP_EOL;
+?>
